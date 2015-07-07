@@ -10,9 +10,11 @@ class User::Create < Service::Base
 
   def call
     if valid?
-      assign_password
       assign_api_key
+      assign_password
       user.save
+
+      send_mail
     end
 
     self
@@ -20,19 +22,16 @@ class User::Create < Service::Base
 
   private
 
-    def assign_password
-      pwd = generate_password
-
-      user.temp_password = pwd
-      user.password = User.encrypt_password(pwd)
-    end
-
-    def generate_password
-      Time.now.strftime('%H%M%m')
-    end
-
     def assign_api_key
       user.api_key = generate_api_key
+    end
+
+    def assign_password
+      user.password = User.encrypt_password(user.api_key)
+    end
+
+    def send_mail
+      UserMailer.create(user).deliver_now
     end
 
     def generate_api_key

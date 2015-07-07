@@ -1,13 +1,7 @@
 class UserMailer < ApplicationMailer
+  def create(user)
+    @user = user
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.create.subject
-  #
-  def create
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    mail to: user.email, subject: t('.title')
   end
 end
