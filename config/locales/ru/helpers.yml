@@ -1,19 +1,8 @@
 ru:
   helpers:
     label:
-      company:
-        name: 'Название компании:'
-        contact_person: 'Контактное лицо:'
-        phone: 'Сотовый телефон:'
+      user:
         email: 'Электронная почта:'
-        note: 'Примечания:'
-      instance:
-        msg: 'СМС-сообщение:'
-        expire: 'Время действия созданного кода (сек.):'
-        attempts: 'Количество попыток ввода пинкода для одной операции:'
-        sender_id: 'Отправитель:'
     submit:
-      company:
-        create: 'Зарегистрировать'
-      instance:
-        create: 'Создать'
+      user:
+        create: 'Получить ключ'

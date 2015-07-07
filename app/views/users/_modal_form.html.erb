@@ -1,0 +1,8 @@
+<%= content_tag :div, class: 'modal-header' do %>
+  <%= render_close_modal_window_button %>
+  <%= content_tag :h4, t('.title') %>
+<% end %>
+
+<%= content_tag :div, class: 'modal-body' do %>
+  <%= render 'form' %>
+<% end %>

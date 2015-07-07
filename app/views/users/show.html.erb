@@ -1,0 +1,14 @@
+<%= title t('.title') %>
+
+<%= content_tag :div, class: 'jumbotron' do %>
+  <%= content_tag :div, class: 'contaner' do %>
+    <%= content_tag :h1, t('.title') %>
+    <br>
+    <%= content_tag :p, t('.text') %>
+
+    <br>
+    <%= content_tag :p do %>
+      <%= link_to t('.main_page'), root_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
+  <% end %>
+<% end %>

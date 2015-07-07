@@ -1,0 +1,13 @@
+<%= form_for @user, remote: true do |f| %>
+  <%= service_errors(@service) %>
+
+  <%= content_tag :div, class: 'form-group' do %>
+    <%= f.label :email %><br>
+    <%= f.email_field :email, class: 'form-control' %>
+  <% end %>
+
+  <hr>
+  <%= content_tag :div, class: 'form-group' do %>
+    <%= f.submit class: 'btn btn-primary btn-lg form_button_JS', 'data-loading-text' => "Loading..." %>
+  <% end %>
+<% end %>

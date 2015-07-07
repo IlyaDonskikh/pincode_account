@@ -1,0 +1,12 @@
+<%= content_tag :div, class: 'modal_show_window' do %>
+  <%= content_tag :div, class: 'modal_header' do %>
+    <%= image_tag 'wait_call.jpg', alt: t('.wait_call') %>
+    <%= content_tag :h3, t('.wait_call') %>
+  <% end %>
+
+  <%= content_tag :div, class: 'modal-body' do %>
+    <%= content_tag :p, t('.info') %>
+    <%= content_tag :p, raw(t '.contacts', email: mail_to('mail@pinc0de.com')) %>
+    <%= content_tag :p, t('.bye') %>
+  <% end %>
+<% end %>

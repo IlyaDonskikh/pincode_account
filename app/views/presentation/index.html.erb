@@ -6,7 +6,7 @@
     <%= content_tag :p, raw(t '.text') %><br>
 
     <%= content_tag :div, class: 'navigation' do %>
-      <%= link_to t('.sign_up'), '#', remote: true, class: 'btn btn-success btn-lg' %>
+      <%= link_to t('.sign_up'), new_user_path, remote: true, class: 'btn btn-success btn-lg' %>
       &nbsp;
       <%= link_to t('.sign_in'), '#', remote: true, class: 'btn btn-primary btn-lg' %>
     <% end %>

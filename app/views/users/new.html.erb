@@ -1,0 +1,12 @@
+<%= title t('.title') %>
+
+<%= content_tag :ol, class: 'breadcrumb' do %>
+  <%= content_tag :li, link_to(t('.main_page'), root_path) %>
+  <%= content_tag :li, t('.title'), class: 'active'  %>
+<% end %>
+
+<%= content_tag :div, class: 'page-header' do %>
+  <%= content_tag :h1, t('.title') %>
+<% end %>
+
+<%= render 'form' %>
