@@ -1,0 +1,16 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/**/*
+    - bin/**/*
+    - test/**/*
+    - config/**/*
+    - script/**/*
+Documentation:
+  Enabled: false
+IndentationConsistency:
+  Enabled: false
+ClassAndModuleChildren:
+  Enabled: false
