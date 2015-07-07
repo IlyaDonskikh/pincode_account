@@ -1,0 +1,42 @@
+$ ->
+  hljs.initHighlightingOnLoad()
+
+  $(document).on 'click', '.form_button_JS', ->
+    $(@).button('loading')
+
+  expirePincode()
+
+@showModalWindow = (content, size = 'normal') ->
+  modalWindow = $('.modal_window_JS')
+  modalWindowContentBlock = modalWindow.find('.modal_content_JS')
+  dialog = modalWindow.find('.modal-dialog_JS')
+
+  if (size == 'small')
+    dialog.addClass('modal-sm')
+  else
+    dialog.removeClass('modal-sm')
+
+  modalWindowContentBlock.html('')
+  modalWindow.modal('show')
+  modalWindowContentBlock.html(content)
+
+@hideModalWindow = () ->
+  modalWindow = $('.modal_window_JS')
+  modalWindow.modal('hide')
+
+@hideBlock = (class_name) ->
+  errorBlock = $('.' + class_name)
+  errorBlock.slideUp(400)
+
+@expirePincode = () ->
+  countdownTime = $('.pincode_contdown_time_JS').text()
+
+  $('.pincode_countdown_JS').countdown
+    until: countdownTime
+    compact: true
+    format: 'MS'
+    description: ''
+    onExpiry: tryAgainPincode
+
+@tryAgainPincode = () ->
+  $('.expire_note_JS').removeClass('hide')

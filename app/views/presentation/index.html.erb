@@ -1,0 +1,45 @@
+<% title t('.meta_title') %>
+
+<%= content_tag :div, class: 'container' do %>
+  <%= content_tag :div, class: 'about' do %>
+    <%= content_tag :h1, raw(t '.title') %>
+    <%= content_tag :p, raw(t '.text') %><br>
+
+    <%= content_tag :div, class: 'navigation' do %>
+      <%= link_to t('.sign_up'), '#', remote: true, class: 'btn btn-success btn-lg' %>
+      &nbsp;
+      <%= link_to t('.sign_in'), '#', remote: true, class: 'btn btn-primary btn-lg' %>
+    <% end %>
+
+    <%= image_tag 'phone.jpg', alt: t('.title') %>
+  <% end %>
+<% end %>
+
+<%= content_tag :div, class: 'instructions' do %>
+  <%= content_tag :div, class: 'container' do %>
+    <%= content_tag :div, class: 'col-md-7' do %>
+      <%= content_tag :h2, t('.instructions_title') %>
+      <%= content_tag :p, t('.instructions_text') %>
+
+      <%= content_tag :p, t('.create_pincode') %>
+      <%= render 'create_pincode' %>
+      <br>
+
+      <%= content_tag :p, t('.check_pincode') %>
+      <%= render 'check_pincode' %>
+
+      <%= content_tag :h3, t('.responses') %>
+      <%= content_tag :p, t('.responses_text') %>
+
+      <%= content_tag :h3, t('.questions') %>
+      <%= content_tag :p, t('.questions_text') %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= content_tag :div, class: 'container' do %>
+  <%= content_tag :div, class: 'hotdeal' do %>
+    <%= content_tag :p, t('.hotdeal_text') %>
+    <%= link_to t('.hotdeal_get'), '#', remote: true, class: 'btn btn-success btn-lg' %>
+  <% end %>
+<% end %>

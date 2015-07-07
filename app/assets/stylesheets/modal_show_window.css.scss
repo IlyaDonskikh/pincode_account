@@ -1,0 +1,28 @@
+div.modal_show_window{
+  div.modal_header{
+    overflow: hidden;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    h3 {
+      position: absolute;
+      width: 100%;
+      display: block;
+      margin-top: -62px;
+      margin-left: -15px;
+      font-weight: 300;
+      font-size: 32px;
+      color: #fff;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 20px;
+  }
+}

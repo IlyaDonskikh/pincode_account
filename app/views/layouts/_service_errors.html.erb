@@ -1,0 +1,7 @@
+<%= content_tag :div, class: 'alert alert-danger' do  %>
+  <%= content_tag :ul, class: '' do  %>
+    <% service_errors.errors.format_list.each do |error| %>
+      <%= content_tag :li, "#{error.first[0].capitalize}: #{error.first[1]}" %>
+    <% end %>
+  <% end %>
+<% end %>

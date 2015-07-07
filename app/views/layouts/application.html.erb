@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? content_for(:title) : 'Pincoder' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+
+<%= render partial: 'layouts/google_tag' %>
+
+<%= content_tag :div, class: 'container' do %>
+  <%= yield %>
+<% end %>
+
+</body>
+</html>

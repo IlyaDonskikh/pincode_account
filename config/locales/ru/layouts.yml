@@ -1,0 +1,8 @@
+ru:
+  layouts:
+    office:
+      navigation:
+        company: 'Компания'
+        logout: 'Выход'
+    presentation:
+      footer_text: '2015 © Pinc0de'

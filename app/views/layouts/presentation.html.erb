@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? content_for(:title) : 'Pincoder' %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+  <%= render partial: 'layouts/google_tag' %>
+  <%= render partial: 'layouts/modal_window' %>
+
+  <%= yield %>
+
+  <%= content_tag :div, t('.footer_text'), class: 'footer' %>
+</body>
+</html>
