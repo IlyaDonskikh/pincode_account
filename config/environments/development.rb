@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.pincode_app_url = 'http://localhost:9292/v1'
+  config.pincode_app_url = 'http://localhost:9292/api/v1'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
