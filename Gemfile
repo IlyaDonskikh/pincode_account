@@ -26,3 +26,7 @@ group :development do
   gem 'letter_opener'
   gem 'disable_assets_logger'
 end
+
+group :test do
+  gem 'webmock'
+end

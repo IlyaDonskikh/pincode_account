@@ -30,8 +30,4 @@ module ApplicationHelper
       content_tag :span, raw('&times;'), 'aria-hidden' => 'true'
     end
   end
-
-  def pincode_url
-    Rails.application.config.pincode_app_url
-  end
 end

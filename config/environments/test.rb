@@ -1,6 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  default_url_options[:host] = 'localhost:3000'
 
+  ## Pincode app
+  config.pincode_app_url = 'http://localhost:9292/v1'
+  config.pincode_app_key = 'test_app_key'
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped

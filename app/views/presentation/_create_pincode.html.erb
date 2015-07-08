@@ -1,5 +1,5 @@
 <%= content_tag :div, class: 'highlightjs' do %>
-<pre><code class="ruby">POST '<%= pincode_url %>/pins',
+<pre><code class="ruby">POST '<%= api_v1_pins_url %>',
      id: $token,
      message: $message,
      phone: $phone,

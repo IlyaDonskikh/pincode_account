@@ -1,5 +1,5 @@
 <%= content_tag :div, class: 'highlightjs' do %>
-<pre><code class="ruby">GET '<%= pincode_url %>/pins/$id/check',
+<pre><code class="ruby">GET '<%= api_v1_pins_url %>/$id/check',
     code: $code,
     api_key: $api_key
 </pre></code>
