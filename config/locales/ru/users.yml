@@ -1,10 +1,10 @@
 ru:
   users:
     new:
-      title: 'Регистрация компании'
+      title: 'Генерация ключа'
       main_page: 'Главная страница'
     modal_form:
-      title: 'Регистрация компании'
+      title: 'Генерация ключа'
     modal_show:
       wait_call: '— Все хорошо.'
       info:

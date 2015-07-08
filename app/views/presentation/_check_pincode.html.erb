@@ -1,6 +1,6 @@
 <%= content_tag :div, class: 'highlightjs' do %>
-<pre><code class="ruby">RestClient.get 'http://api.pinc0de.com/v1/pins/$id/check',
-                code: $code,
-                api_key: $api_key
+<pre><code class="ruby">GET '<%= pincode_url %>/v1/pins/$id/check',
+    code: $code,
+    api_key: $api_key
 </pre></code>
 <% end %>
