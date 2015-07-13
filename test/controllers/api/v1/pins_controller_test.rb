@@ -8,20 +8,24 @@ class Api::V1::PinsControllerTest < ActionController::TestCase
   test 'create' do
     stub_create_api_request
 
-    post :create, pin_params
+    post :create, pin_create_params
 
     assert_equal 200, response.status
   end
 
   test 'check' do
-    get :check, id: 2
+    params = generate_check_api_params
+
+    stub_check_api_request(params[:id])
+
+    get :check, params
 
     assert_equal 200, response.status
   end
 
   private
 
-    def pin_params
+    def pin_create_params
       api_key = @user.api_key
       pin_params = attributes_for(:pin)
 

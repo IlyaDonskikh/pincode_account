@@ -24,6 +24,14 @@ class ActiveSupport::TestCase
       )
     end
 
+    def generate_check_api_params
+      api_key = @user.api_key
+      id = generate(:string)
+      code = generate(:string)
+
+      { api_key: api_key, id: id, code: code }
+    end
+
     def create_user
       email = generate(:email)
 

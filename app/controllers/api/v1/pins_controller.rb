@@ -6,6 +6,8 @@ class Api::V1::PinsController < Api::V1::ApplicationController
   end
 
   def check
-    render nothing: true, status: 200
+    service = Pin::Check.call(params)
+
+    render nothing: true, status: service.status
   end
 end

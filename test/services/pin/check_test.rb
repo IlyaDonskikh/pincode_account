@@ -4,7 +4,7 @@ class Pin::CheckTest < ActiveSupport::TestCase
   def setup
     @user = create_user
 
-    @params = generate_params
+    @params = generate_check_api_params
 
     stub_check_api_request(@params[:id])
   end
@@ -28,14 +28,4 @@ class Pin::CheckTest < ActiveSupport::TestCase
 
     assert_equal false, service.success?
   end
-
-  private
-
-    def generate_params
-      api_key = @user.api_key
-      id = generate(:string)
-      code = generate(:string)
-
-      { api_key: api_key, id: id, code: code }
-    end
 end
