@@ -6,5 +6,21 @@ require 'webmock/minitest'
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
-  # Add more helper methods to be used by all tests here...
+  private
+
+    def stub_create_api_request
+      url = Rails.application.config.pincode_app_url
+
+      stub_request(:post, "#{url}/pins/").to_return(
+        status: 200
+      )
+    end
+
+    def create_user
+      email = generate(:email)
+
+      service = User::Create.call(email: email)
+
+      service.user
+    end
 end

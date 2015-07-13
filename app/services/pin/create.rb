@@ -5,6 +5,7 @@ class Pin::Create < Service::Base
   def initialize(attrs)
     @attrs = attrs
     @id = attrs[:id]
+    @status = 403
     @api_key = attrs[:api_key]
     @app_key = Rails.application.config.pincode_app_key
     @app_url = Rails.application.config.pincode_app_url

@@ -6,7 +6,7 @@ class Pin::CreateTest < ActiveSupport::TestCase
     @api_key = user.api_key
     @pin_params = attributes_for(:pin)
 
-    stub_create_request
+    stub_create_api_request
   end
 
   test 'create' do
@@ -24,20 +24,4 @@ class Pin::CreateTest < ActiveSupport::TestCase
 
     assert_equal service.status, 200
   end
-
-  private
-
-    def create_user
-      email = generate(:email)
-
-      service = User::Create.call(email: email)
-
-      service.user
-    end
-
-    def stub_create_request
-      stub_request(:post, "http://localhost:9292/v1/pins/").to_return(
-        status: 200
-      )
-    end
 end
