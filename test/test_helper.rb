@@ -16,6 +16,14 @@ class ActiveSupport::TestCase
       )
     end
 
+    def stub_check_api_request(id)
+      url = Rails.application.config.pincode_app_url
+
+      stub_request(:get, "#{url}/pins/#{id}/check").to_return(
+        status: 200
+      )
+    end
+
     def create_user
       email = generate(:email)
 

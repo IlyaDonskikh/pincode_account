@@ -25,6 +25,6 @@ class Api::V1::PinsControllerTest < ActionController::TestCase
       api_key = @user.api_key
       pin_params = attributes_for(:pin)
 
-      pin_params.merge(api_key: @api_key)
+      pin_params.merge(api_key: api_key)
     end
 end

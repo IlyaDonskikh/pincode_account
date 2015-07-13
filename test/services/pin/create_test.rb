@@ -14,7 +14,7 @@ class Pin::CreateTest < ActiveSupport::TestCase
 
     service = Pin::Create.call(params)
 
-    assert_equal service.success?, true
+    assert_equal true, service.success?
   end
 
   test 'status should be 200' do
@@ -22,6 +22,15 @@ class Pin::CreateTest < ActiveSupport::TestCase
 
     service = Pin::Create.call(params)
 
-    assert_equal service.status, 200
+    assert_equal 200, service.status
+  end
+
+  test 'status should be 403 if api_key invalid' do
+    params = @pin_params.merge(api_key: generate(:string))
+
+    service = Pin::Create.call(params)
+
+    assert_equal false, service.success?
+    assert_equal 403, service.status
   end
 end

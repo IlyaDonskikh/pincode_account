@@ -5,10 +5,11 @@ class Pin::Create < Service::Base
   def initialize(attrs)
     @attrs = attrs
     @id = attrs[:id]
-    @status = 403
     @api_key = attrs[:api_key]
     @app_key = Rails.application.config.pincode_app_key
     @app_url = Rails.application.config.pincode_app_url
+
+    @status = 403
 
     super
   end
@@ -49,7 +50,7 @@ class Pin::Create < Service::Base
     end
 
     def check_api_key
-      user = User.where(api_key: @api_key)
+      user = User.find_by(api_key: @api_key)
 
       return if user
 
