@@ -30,6 +30,8 @@ class Pin::Create < Service::Base
       url = "#{@app_url}/pins/"
 
       RestClient.post(url, params)
+    rescue RestClient::ExceptionWithResponse => e
+      e.response
     end
 
     def make_request_params

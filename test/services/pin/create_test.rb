@@ -33,4 +33,14 @@ class Pin::CreateTest < ActiveSupport::TestCase
     assert_equal false, service.success?
     assert_equal 403, service.status
   end
+
+  test 'status should be 403' do
+    stub_create_fail_api_request
+
+    params = @pin_params.merge(api_key: @api_key)
+
+    service = Pin::Create.call(params)
+
+    assert_equal 403, service.status
+  end
 end

@@ -26,10 +26,13 @@ class Pin::Check < Service::Base
   private
 
     def make_request
+      id = "#{@api_key}:#{@id}"
       params = make_request_params
-      url = "#{@app_url}/pins/#{@id}/check"
+      url = "#{@app_url}/pins/#{id}/check"
 
-      RestClient.get(url, params)
+      RestClient.get(url, params: params)
+    rescue RestClient::ExceptionWithResponse => e
+      e.response
     end
 
     def make_request_params

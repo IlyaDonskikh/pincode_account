@@ -16,6 +16,12 @@ class ActiveSupport::TestCase
       )
     end
 
+    def stub_create_fail_api_request
+      url = Rails.application.config.pincode_app_url
+
+      stub_request(:post, "#{url}/pins/").to_return(status: 403)
+    end
+
     def stub_check_api_request(id)
       url = Rails.application.config.pincode_app_url
 
