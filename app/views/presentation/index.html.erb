@@ -24,13 +24,25 @@
       <br>
 
       <%= content_tag :p, t('.check_pincode') %>
-      <%= render 'check_pincode' %>
-
-      <%= content_tag :h3, t('.responses') %>
+      <%= render 'check_pincode' %><br>
       <%= content_tag :p, t('.responses_text') %>
 
-      <%= content_tag :h3, t('.questions') %>
-      <%= content_tag :p, t('.questions_text') %>
+      <%= content_tag :h3, t('.send_sms') %>
+      <%= content_tag :p, t('.send_sms_text') %>
+      <%= content_tag :p, t('.send_sms_note') %>
+
+      <%= content_tag :h3, t('.params') %>
+      <%= content_tag :p, t('.params_text') %>
+
+      <%= content_tag :h3, t('.price') %>
+      <%= content_tag :p, t('.price_text') %>
+      <%= content_tag :p, t('.price_note') %>
+
+      <%= content_tag :h3, t('.open_source') %>
+      <%= content_tag :p, raw(t '.open_source_text', link: link_to(t('.open_source_link'), 'https://github.com/IlyaDonskikh/pincode')) %>
+
+      <%= content_tag :h3, t('.feedback') %>
+      <%= content_tag :p, raw(t '.feedback_text', mail: mail_to('mail@pinc0de.com')) %>
     <% end %>
   <% end %>
 <% end %>
