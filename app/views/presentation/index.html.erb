@@ -27,12 +27,23 @@
       <%= render 'check_pincode' %><br>
       <%= content_tag :p, t('.responses_text') %>
 
+      <%= content_tag :h3, t('.params') %>
+      <%= content_tag :ul, class: 'container' do %>
+        <%= content_tag :li, t('.params_id') %>
+        <%= content_tag :li, t('.params_message') %>
+        <%= content_tag :li, t('.params_phone') %>
+        <%= content_tag :li, t('.params_attempts') %>
+        <%= content_tag :li, t('.params_expire') %>
+        <%= content_tag :li, t('.params_sender') %>
+        <%= content_tag :li, t('.params_api_key') %>
+      <% end %>
+      <%= content_tag :p, t('.params_note') %>
+
       <%= content_tag :h3, t('.send_sms') %>
       <%= content_tag :p, t('.send_sms_text') %>
-      <%= content_tag :p, t('.send_sms_note') %>
+      <%= render 'sms_settings' %>
 
-      <%= content_tag :h3, t('.params') %>
-      <%= content_tag :p, t('.params_text') %>
+      <%= content_tag :p, t('.send_sms_note') %>
 
       <%= content_tag :h3, t('.price') %>
       <%= content_tag :p, t('.price_text') %>

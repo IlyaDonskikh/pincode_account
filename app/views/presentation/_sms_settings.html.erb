@@ -1,0 +1,31 @@
+<%= content_tag :div, class: 'sms_settings' do %>
+  <%= content_tag :ul, class: 'nav nav-tabs', role: 'tablist' do %>
+    <li role="presentation" class="active">
+      <%= link_to t('.clickatell'), '#clickatell', role: 'tab', 'data-toggle' => 'tab', 'aria-controls' => 'clickatell' %>
+    </li>
+    <li role="presentation">
+      <%= link_to t('.smsru'), '#smsru', role: 'tab', 'data-toggle' => 'tab', 'aria-controls' => 'smsru' %>
+    </li>
+    <li role="presentation">
+      <%= link_to t('.nexmo'), '#nexmo', role: 'tab', 'data-toggle' => 'tab', 'aria-controls' => 'nexmo' %>
+    </li>
+    <li role="presentation">
+      <%= link_to t('.sms_uslugi'), '#sms_uslugi', role: 'tab', 'data-toggle' => 'tab', 'aria-controls' => 'sms_uslugi' %>
+    </li>
+  <% end %>
+
+  <%= content_tag :div, class: 'tab-content' do %>
+    <%= content_tag :div, role: 'tabpanel', class: 'tab-pane active', id: 'clickatell' do %>
+      <%= render partial: 'presentation/sms/clickatell' %>
+    <% end %>
+    <%= content_tag :div, role: 'tabpanel', class: 'tab-pane', id: 'smsru' do %>
+      <%= render partial: 'presentation/sms/smsru' %>
+    <% end %>
+    <%= content_tag :div, role: 'tabpanel', class: 'tab-pane', id: 'nexmo' do %>
+      <%= render partial: 'presentation/sms/nexmo' %>
+    <% end %>
+    <%= content_tag :div, role: 'tabpanel', class: 'tab-pane', id: 'sms_uslugi' do %>
+      <%= render partial: 'presentation/sms/sms_uslugi' %>
+    <% end %>
+  <% end %>
+<% end %>

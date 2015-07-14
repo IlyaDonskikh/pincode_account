@@ -98,6 +98,51 @@ body.presentation {
         color: #fff;
         text-decoration: underline;
       }
+
+      ul {
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        li {
+          font-weight: 300;
+          font-size: 20px;
+        }
+      }
+
+      div.sms_settings{
+        padding-top: 8px;
+
+        ul.nav.nav-tabs{
+          border: 0;
+
+          li {
+            margin-right: 6px;
+            font-size: 18px;
+
+            a {
+              border: 0;
+              text-decoration: none;
+              border-radius: 6px;
+
+              &:hover{
+                background: #23241f;
+              }
+            }
+
+            &.active {
+              background: none;
+
+              a {
+                background: #000;
+              }
+            }
+          }
+        }
+
+        div.tab-content {
+          padding: 16px 0;
+        }
+      }
     }
   }
 }
