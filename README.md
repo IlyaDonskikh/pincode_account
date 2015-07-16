@@ -5,7 +5,7 @@ Two-factor authentication accounting service.
 1. Setup and start main service: https://github.com/IlyaDonskikh/pincode.
 2. Clone current repository.
 3. Start rails server.
-4. Open site and follow the instructionsy.
+4. Open site and follow the instructions.
 
 ## Bonuces
 Also i was started a cloud service and you can try this code in production mode here: http://www.pinc0de.com/. 
