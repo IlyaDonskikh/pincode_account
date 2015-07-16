@@ -1,8 +1,8 @@
 $ ->
   hljs.initHighlightingOnLoad()
 
-  $(document).on 'click', '.form_button_JS', ->
-    $(@).button('loading')
+  $(document).on 'submit', '.form_submit_JS', ->
+    $(@).find('input[type=submit]').button('loading')
 
   expirePincode()
 

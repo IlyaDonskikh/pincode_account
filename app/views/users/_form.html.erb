@@ -1,4 +1,4 @@
-<%= form_for @user, remote: true do |f| %>
+<%= form_for @user, remote: true, html: { class: 'form_submit_JS' } do |f| %>
   <%= service_errors(@service) %>
 
   <%= content_tag :div, class: 'form-group' do %>
@@ -8,6 +8,6 @@
 
   <hr>
   <%= content_tag :div, class: 'form-group' do %>
-    <%= f.submit class: 'btn btn-primary btn-lg form_button_JS', 'data-loading-text' => "Loading..." %>
+    <%= f.submit class: 'btn btn-primary btn-lg', 'data-loading-text' => "Loading..." %>
   <% end %>
 <% end %>
